@@ -6,25 +6,26 @@
         </p>
 
         <div class="yusuanTwo">
-            <div class="shanxing">
+            <!-- <div class="shanxing">
               
 
-            </div>
+            </div> -->
+            <findShanxing :logo="info"></findShanxing>
 
             <div class="shanxing_right">
               <p class="pp1">
                 <span>剩余预算</span>
-                <span>25744</span>
+                <span>{{info[1].value}}</span>
               </p>
 
               <p class="pp1 pp11">
                 <span class="spp1">本月预算</span>
-                <span class="spp2">30000</span>
+                <span class="spp2">{{info[0].value+info[1].value}}</span>
               </p>
 
               <p class="pp1 pp11">
                 <span class="spp1">本月支出</span>
-                <span class="spp2">4256</span>
+                <span class="spp2">{{info[0].value}}</span>
               </p>
 
             </div>
@@ -35,11 +36,23 @@
 </template>
 
 <script>
+import findShanxing from './findShanxing.vue';
 
 export default {
   name: 'findYusuan',
+  components:{
+    findShanxing
+  },
   data () {
     return {
+      info: [
+              {"value":100,"name":"支出","itemStyle":{"color":"#f5f5f5"}},
+              {"value":400,"name":"剩余","itemStyle":{"color":"#fed955"}}      
+      ]
+      // ,
+      // infoAll: [
+      //       {"surplus":400,"budget":500,"out":100} 
+      // ]
 
     }
   }
@@ -81,7 +94,7 @@ export default {
   flex: 1;
 }
 
-.shanxing{
+/*.shanxing{
   width: 1.4rem;
   background: red;
 
@@ -94,7 +107,7 @@ export default {
 
 
 }
-
+*/
 .shanxing_right{
   width: 1.93rem;
   display: flex;

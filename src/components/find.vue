@@ -30,10 +30,6 @@ import findTupianTwo from './findTupianTwo.vue';
 
 export default {
   name: 'find',
-  mounted:function(){
-	    this.$emit("echangtop","findTitle");
-	    this.$emit("echangbottom","bottom");
-	},
   components:{
     findLunbotu,
     findMonth,
@@ -42,6 +38,11 @@ export default {
     findEightPic,
     findJiufu,
     findTupianTwo
+  },
+  mounted(){
+    this.$emit("echangtop","findTitle");
+    this.$emit("echangbottom","bottom");
+     
   },
   data () {
     return {
@@ -54,7 +55,8 @@ export default {
 <style scoped>
 .findCss{
   background: #f7f7f7;
-  flex:1;
+  flex: 1;
   overflow-y:auto;
+  overflow-x: hidden;
 }
 </style>

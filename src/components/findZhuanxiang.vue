@@ -45,6 +45,7 @@ export default {
      margin-top: 0.05rem
   }
   .zhuanxiang p{
+    width: 100%;
     font-size:0.12rem;
     margin-left:0.16rem;
     height: 0.27rem;
